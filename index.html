@@ -1,0 +1,237 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Cómputo - Elecciones Presidenciales</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --primary: #003366; /* Azul institucional */
+            --accent: #d32f2f;  /* Rojo acento */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* Tarjeta de Estado del Escrutinio */
+        .status-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            text-align: center;
+            border-top: 4px solid var(--accent);
+        }
+
+        .status-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            padding: 10px;
+        }
+
+        .status-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Resultados */
+        .results-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-left: 5px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .candidate-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .candidate-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .candidate-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .candidate-votes {
+            text-align: right;
+        }
+
+        .candidate-percentage {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .candidate-total-votes {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Barra de Progreso */
+        .progress-bar-bg {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 12px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        /* Colores de partidos (Personalizables) */
+        .color-partido1 { background-color: #1565c0; } /* Azul */
+        .color-partido2 { background-color: #e65100; } /* Naranja */
+        .color-partido3 { background-color: #2e7d32; } /* Verde */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SISTEMA DE CÓMPUTO ELECTORAL</h1>
+        <p>Elecciones Generales del Servidor</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Estado de las actas -->
+        <div class="status-card">
+            <h3>AVANCE GENERAL</h3>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-number">85.30%</div>
+                    <div style="font-size: 0.85rem; color: #666;">Actas Procesadas</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number">1,245</div>
+                    <div style="font-size: 0.85rem; color: #666;">Votos Emitidos</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number">Última actualización</div>
+                    <div style="font-size: 0.85rem; color: #e53935; font-weight: bold;">En Vivo</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-title">Resultados Presidenciales</div>
+
+        <!-- Candidato 1 -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Partido Alfa (Candidato 1)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage">45.20%</div>
+                    <div class="candidate-total-votes">563 Votos</div>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill color-partido1" style="width: 45.20%;"></div>
+            </div>
+        </div>
+
+        <!-- Candidato 2 -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Partido Beta (Candidato 2)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage">38.80%</div>
+                    <div class="candidate-total-votes">483 Votos</div>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill color-partido2" style="width: 38.80%;"></div>
+            </div>
+        </div>
+
+        <!-- Candidato 3 / Votos en Blanco -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Votos en Blanco / Nulos</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage">16.00%</div>
+                    <div class="candidate-total-votes">199 Votos</div>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill color-partido3" style="width: 16.00%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Oficina de Procesos Electorales del Servidor &copy; 2026
+    </footer>
+
+</body>
+</html>
