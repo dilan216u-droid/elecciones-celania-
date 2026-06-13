@@ -21,6 +21,7 @@
             --color-roja: #d32f2f;     /* Rojo fuerte */
             --color-alianza: #455a64;  /* Gris azulado Alianza */
             --color-liberal: #fff176;   /* Amarillo claro */
+            --color-fp: #ff5722;       /* Naranja para Frente Popular */
             --color-blanco: #9e9e9e;   /* Gris para Blanco/Nulo */
         }
 
@@ -230,6 +231,7 @@
         .roja-text { color: var(--color-roja); }
         .alianza-text { color: var(--color-alianza); }
         .liberal-text { color: #b7a200; }
+        .fp-text { color: var(--color-fp); }
 
         .candidate-total-votes {
             font-size: 0.85rem;
@@ -261,6 +263,7 @@
         .bg-roja { background-color: var(--color-roja); }
         .bg-alianza { background-color: var(--color-alianza); }
         .bg-liberal { background-color: var(--color-liberal); }
+        .bg-fp { background-color: var(--color-fp); }
         .bg-blanco { background-color: var(--color-blanco); }
 
         footer {
@@ -301,7 +304,7 @@
             <h3>AVANCE GENERAL DEL ESCRUTINIO</h3>
             <div class="status-grid">
                 <div class="status-item">
-                    <div class="status-number">36.99%</div>
+                    <div class="status-number">40.92%</div>
                     <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Actas Procesadas</div>
                 </div>
                 <div class="status-item">
@@ -309,11 +312,11 @@
                     <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Votantes Actuales</div>
                 </div>
                 <div class="status-item">
-                    <div class="status-number">37,300</div>
+                    <div class="status-number">41,260</div>
                     <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Procesadas</div>
                 </div>
                 <div class="status-item">
-                    <div class="status-number">63,540</div>
+                    <div class="status-number">59,580</div>
                     <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Faltantes</div>
                 </div>
                 <div class="status-item">
@@ -349,12 +352,12 @@
                     <div class="candidate-vice">Vice: Isabel Ayuso</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage adl-text">44.57%</div>
-                    <div class="candidate-total-votes">4,151,399 Votos</div>
+                    <div class="candidate-percentage adl-text">42.64%</div>
+                    <div class="candidate-total-votes">3,971,776 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-adl" style="width: 44.57%;"></div>
+                <div class="progress-bar-fill bg-adl" style="width: 42.64%;"></div>
             </div>
         </div>
 
@@ -367,12 +370,12 @@
                     <div class="candidate-vice">Vice: Sanae Yamamoto</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage frenova-text">38.57%</div>
-                    <div class="candidate-total-votes">3,592,400 Votos</div>
+                    <div class="candidate-percentage frenova-text">35.60%</div>
+                    <div class="candidate-total-votes">3,315,939 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-frenova" style="width: 38.57%;"></div>
+                <div class="progress-bar-fill bg-frenova" style="width: 35.60%;"></div>
             </div>
         </div>
 
@@ -380,17 +383,17 @@
         <div class="candidate-card">
             <div class="candidate-info">
                 <div>
-                    <div class="party-name" style="color: var(--color-fcc);">Frente de Convergencia Civil</div>
+                    <div class="party-name" style="color: var(--color-fcc);">Frente deblank Convergencia Civil</div>
                     <div class="candidate-name">Javiera Milei</div>
                     <div class="candidate-vice">Vice: Alvaro Uribe</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage fcc-text">22.07%</div>
-                    <div class="candidate-total-votes">2,055,758 Votos</div>
+                    <div class="candidate-percentage fcc-text">21.65%</div>
+                    <div class="candidate-total-votes">2,016,583 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-fcc" style="width: 22.07%;"></div>
+                <div class="progress-bar-fill bg-fcc" style="width: 21.65%;"></div>
             </div>
         </div>
 
@@ -402,12 +405,12 @@
                     <div class="candidate-name" style="color: #666; font-size: 1rem;">Votos en Blanco / Nulos</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage" style="color: var(--color-blanco);">0.13%</div>
-                    <div class="candidate-total-votes">15,288 Votos</div>
+                    <div class="candidate-percentage" style="color: var(--color-blanco);">0.11%</div>
+                    <div class="candidate-total-votes">10,547 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-blanco" style="width: 0.13%;"></div>
+                <div class="progress-bar-fill bg-blanco" style="width: 0.11%;"></div>
             </div>
         </div>
 
@@ -427,12 +430,12 @@
                     <div class="candidate-name" style="color: var(--color-alianza);">ALIANZA <span style="font-size:0.8rem; font-weight:normal; color:#666;">(Fusión ADL + FCC + PP)</span></div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage alianza-text">52.33%</div>
-                    <div class="candidate-total-votes">4,873,866 Votos</div>
+                    <div class="candidate-percentage alianza-text">53.94%</div>
+                    <div class="candidate-total-votes">5,024,548 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-alianza" style="width: 52.33%;"></div>
+                <div class="progress-bar-fill bg-alianza" style="width: 53.94%;"></div>
             </div>
         </div>
 
@@ -443,12 +446,12 @@
                     <div class="candidate-name">FRENOVA</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage frenova-text">40.51%</div>
-                    <div class="candidate-total-votes">3,773,357 Votos</div>
+                    <div class="candidate-percentage frenova-text">36.66%</div>
+                    <div class="candidate-total-votes">3,414,569 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-frenova" style="width: 40.51%;"></div>
+                <div class="progress-bar-fill bg-frenova" style="width: 36.66%;"></div>
             </div>
         </div>
 
@@ -459,12 +462,12 @@
                     <div class="candidate-name">Convergencia Social (CS)</div>
                 </div>
                 <div class="candidate-votes">
-                    <div class="candidate-percentage convergencia-text">8.12%</div>
-                    <div class="candidate-total-votes">756,043 Votos</div>
+                    <div class="candidate-percentage convergencia-text">9.88%</div>
+                    <div class="candidate-total-votes">920,487 Votos</div>
                 </div>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-convergencia" style="width: 8.12%;"></div>
+                <div class="progress-bar-fill bg-convergencia" style="width: 9.88%;"></div>
             </div>
         </div>
 
@@ -481,6 +484,22 @@
             </div>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill bg-roja" style="width: 4.02%;"></div>
+            </div>
+        </div>
+
+        <!-- Frente Popular -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Frente Popular (FP)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage fp-text">0.44%</div>
+                    <div class="candidate-total-votes">41,111 Votos</div>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-fp" style="width: 0.44%;"></div>
             </div>
         </div>
 
@@ -525,27 +544,4 @@
                 <div class="candidate-votes">
                     <div class="candidate-percentage" style="color: var(--color-blanco);">0.40%</div>
                     <div class="candidate-total-votes">37,102 Votos</div>
-                </div>
-            </div>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill bg-blanco" style="width: 0.40%;"></div>
-            </div>
-        </div>
-
-
-        <hr class="seccion-divider">
-
-
-        <!-- ==================================================== -->
-        <!-- SECCIÓN 3: SENADO                                    -->
-        <!-- ==================================================== -->
-        <div class="results-title">Resultados al Senado</div>
-
-        <!-- ALIANZA -->
-        <div class="candidate-card">
-            <div class="candidate-info">
-                <div>
-                    <div class="candidate-name" style="color: var(--color-alianza);">ALIANZA</div>
-                </div>
-                <div class="candidate-votes">
-         
+                </d
