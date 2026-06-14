@@ -40,7 +40,6 @@
             text-align: center;
             padding: 25px 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
         }
 
         header h1 {
@@ -55,43 +54,10 @@
             font-size: 0.9rem;
         }
 
-        /* Botón de navegación del mapa / estadísticas */
-        .nav-mode-btn {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 1.6rem;
-            padding: 8px 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .nav-mode-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.08);
-        }
-
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 15px;
-        }
-
-        /* Control de vistas de interfaz */
-        .view-section {
-            display: none;
-        }
-        .view-section.active {
-            display: block;
         }
 
         /* Ficha de Datos Poblacionales */
@@ -144,7 +110,7 @@
 
         .status-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
@@ -316,222 +282,267 @@
 <body>
 
     <header>
-        <h1 id="header-title">SISTEMA DE CÓMPUTO ELECTORAL</h1>
-        <p id="header-subtitle">Elecciones Generales de Celania - Ámbito Nacional</p>
-        
-        <!-- Botón Dinámico de Navegación -->
-        <button id="nav-btn" class="nav-mode-btn" onclick="toggleInterface()" title="Cambiar Ámbito">🌍</button>
+        <h1>SISTEMA DE CÓMPUTO ELECTORAL</h1>
+        <p>Elecciones Generales de Celania</p>
     </header>
 
     <div class="container">
         
+        <!-- Ficha Demográfica -->
+        <div class="poblacion-card">
+            <div class="poblacion-title">Datos de Población Electoral</div>
+            <div class="poblacion-grid">
+                <div class="poblacion-item">Población Total: <span>32,790,071</span></div>
+                <div class="poblacion-item">Hab. Registrados: <span>24,100,000</span></div>
+                <div class="poblacion-item">Población Extranjero: <span>3,500,000</span></div>
+                <div class="poblacion-item">Hab. Ext. Registrados: <span>1,110,000</span></div>
+                <div class="poblacion-item">Mesas en el Territorio: <span>96,400</span></div>
+                <div class="poblacion-item">Mesas en el Extranjero: <span>4,440</span></div>
+                <div class="poblacion-item">Mesas Totales: <span>100,840</span></div>
+            </div>
+        </div>
+
+        <!-- Avance del Escrutinio -->
+        <div class="status-card">
+            <h3>AVANCE GENERAL DEL ESCRUTINIO</h3>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-number">100.00%</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Actas Procesadas</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number">14,628,588</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Votantes Actuales</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number">73,606</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Procesadas</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number">0</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Faltantes</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-number" style="color: #0d47a1; font-size: 1.1rem; margin-top: 4px; font-weight: bold;">CONCLUIDO</div>
+                    <div style="font-size: 0.8rem; color: #666;">Estado del Proceso</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Participación Cuadrada -->
+        <div class="participacion-card">
+            <div class="participacion-info">
+                <div>PARTICIPACIÓN CIUDADANA</div>
+                <div style="color: var(--accent);">64.15%</div>
+            </div>
+            <div class="progress-bar-square-bg">
+                <div class="progress-bar-square-fill" style="width: 64.15%;"></div>
+            </div>
+        </div>
+
+
         <!-- ==================================================== -->
-        <!-- VISTA 1: NACIONAL (INTERFAZ ORIGINAL)                -->
+        <!-- SECCIÓN 1: PRESIDENCIA (RESULTADOS FINALES)          -->
         <!-- ==================================================== -->
-        <div id="vista-nacional" class="view-section active">
-            
-            <!-- Ficha Demográfica -->
-            <div class="poblacion-card">
-                <div class="poblacion-title">Datos de Población Electoral</div>
-                <div class="poblacion-grid">
-                    <div class="poblacion-item">Población Total: <span>32,790,071</span></div>
-                    <div class="poblacion-item">Hab. Registrados: <span>24,100,000</span></div>
-                    <div class="poblacion-item">Población Extranjero: <span>3,500,000</span></div>
-                    <div class="poblacion-item">Hab. Ext. Registrados: <span>1,110,000</span></div>
-                    <div class="poblacion-item">Mesas en el Territorio: <span>96,400</span></div>
-                    <div class="poblacion-item">Mesas en el Extranjero: <span>4,440</span></div>
-                    <div class="poblacion-item">Mesas Totales: <span>100,840</span></div>
+        <div class="results-title">Resultados Presidenciales Finales</div>
+
+        <!-- ADL -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="party-name" style="color: var(--color-adl);">Acción por la Democracia y Libertad</div>
+                    <div class="candidate-name">Sebastián Piñera</div>
+                    <div class="candidate-vice">Vice: Isabel Ayuso</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage adl-text">42.61%</div>
+                    <div class="candidate-total-votes">6,233,450 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-adl" style="width: 42.61%;"></div>
+            </div>
+        </div>
 
-            <!-- Avance del Escrutinio -->
-            <div class="status-card">
-                <h3>AVANCE GENERAL DEL ESCRUTINIO</h3>
-                <div class="status-grid">
-                    <div class="status-item">
-                        <div class="status-number">100.00%</div>
-                        <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Actas Procesadas</div>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-number">14,628,588</div>
-                        <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Votantes Actuales</div>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-number">73,606</div>
-                        <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Procesadas</div>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-number">0</div>
-                        <div style="font-size: 0.8rem; color: #666; margin-top: 3px;">Mesas Faltantes</div>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-number" style="color: #0d47a1; font-size: 1.1rem; margin-top: 4px; font-weight: bold;">CONCLUIDO</div>
-                        <div style="font-size: 0.8rem; color: #666;">Estado del Proceso</div>
-                    </div>
+        <!-- FRENOVA -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="party-name" style="color: #558b2f;">FRENOVA</div>
+                    <div class="candidate-name">Carmen Polo</div>
+                    <div class="candidate-vice">Vice: Sanae Yamamoto</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage frenova-text">33.15%</div>
+                    <div class="candidate-total-votes">4,849,443 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-frenova" style="width: 33.15%;"></div>
+            </div>
+        </div>
 
-            <!-- Barra de Participación Cuadrada -->
-            <div class="participacion-card">
-                <div class="participacion-info">
-                    <div>PARTICIPACIÓN CIUDADANA</div>
-                    <div style="color: var(--accent);">64.15%</div>
+        <!-- FCC -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="party-name" style="color: var(--color-fcc);">Frente de Convergencia Civil</div>
+                    <div class="candidate-name">Javiera Milei</div>
+                    <div class="candidate-vice">Vice: Alvaro Uribe</div>
                 </div>
-                <div class="progress-bar-square-bg">
-                    <div class="progress-bar-square-fill" style="width: 64.15%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage fcc-text">22.25%</div>
+                    <div class="candidate-total-votes">3,254,693 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-fcc" style="width: 22.25%;"></div>
+            </div>
+        </div>
 
-            <div class="results-title">Resultados Presidenciales Finales</div>
-
-            <!-- ADL -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="party-name" style="color: var(--color-adl);">Acción por la Democracia y Libertad</div>
-                        <div class="candidate-name">Sebastián Piñera</div>
-                        <div class="candidate-vice">Vice: Isabel Ayuso</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage adl-text">42.61%</div>
-                        <div class="candidate-total-votes">6,233,450 Votos</div>
-                    </div>
+        <!-- Blanco/Nulo Presidencial -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="party-name">Otros</div>
+                    <div class="candidate-name" style="color: #666; font-size: 1rem;">Votos en Blanco / Nulos / Minorías</div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill bg-adl" style="width: 42.61%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage" style="color: var(--color-blanco);">1.99%</div>
+                    <div class="candidate-total-votes">291,002 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-blanco" style="width: 1.99%;"></div>
+            </div>
+        </div>
 
-            <!-- FRENOVA -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="party-name" style="color: #558b2f;">FRENOVA</div>
-                        <div class="candidate-name">Carmen Polo</div>
-                        <div class="candidate-vice">Vice: Sanae Yamamoto</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage frenova-text">33.15%</div>
-                        <div class="candidate-total-votes">4,849,443 Votos</div>
-                    </div>
+
+        <hr class="seccion-divider">
+
+
+        <!-- ==================================================== -->
+        <!-- SECCIÓN 2: PARLAMENTO                                -->
+        <!-- ==================================================== -->
+        <div class="results-title">Resultados al Parlamento de la República</div>
+
+        <!-- ALIANZA -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name" style="color: var(--color-alianza);">ALIANZA <span style="font-size:0.8rem; font-weight:normal; color:#666;">(Fusión ADL + FCC + PP)</span></div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill bg-frenova" style="width: 33.15%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage alianza-text">52.56%</div>
+                    <div class="candidate-total-votes">7,688,541 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-alianza" style="width: 52.56%;"></div>
+            </div>
+        </div>
 
-            <!-- FCC -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="party-name" style="color: var(--color-fcc);">Frente de Convergencia Civil</div>
-                        <div class="candidate-name">Javiera Milei</div>
-                        <div class="candidate-vice">Vice: Alvaro Uribe</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage fcc-text">22.25%</div>
-                        <div class="candidate-total-votes">3,254,693 Votos</div>
-                    </div>
+        <!-- FRENOVA -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">FRENOVA</div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill bg-fcc" style="width: 22.25%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage frenova-text">33.36%</div>
+                    <div class="candidate-total-votes">4,879,555 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-frenova" style="width: 33.36%;"></div>
+            </div>
+        </div>
 
-            <!-- Blanco/Nulo Presidencial -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="party-name">Otros</div>
-                        <div class="candidate-name" style="color: #666; font-size: 1rem;">Votos en Blanco / Nulos / Minorías</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage" style="color: var(--color-blanco);">1.99%</div>
-                        <div class="candidate-total-votes">291,002 Votos</div>
-                    </div>
+        <!-- Convergencia Social -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Convergencia Social (CS)</div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill bg-blanco" style="width: 1.99%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage convergencia-text">10.87%</div>
+                    <div class="candidate-total-votes">1,589,796 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-convergencia" style="width: 10.87%;"></div>
+            </div>
+        </div>
 
-            <hr class="seccion-divider">
-
-            <div class="results-title">Resultados al Parlamento de la República</div>
-
-            <!-- ALIANZA -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name" style="color: var(--color-alianza);">ALIANZA <span style="font-size:0.8rem; font-weight:normal; color:#666;">(Fusión ADL + FCC + PP)</span></div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage alianza-text">52.56%</div>
-                        <div class="candidate-total-votes">7,688,541 Votos</div>
-                    </div>
+        <!-- Celania Roja -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Celania Roja (CR)</div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill bg-alianza" style="width: 52.56%;"></div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage roja-text">3.55%</div>
+                    <div class="candidate-total-votes">519,802 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-roja" style="width: 3.55%;"></div>
+            </div>
+        </div>
 
-            <!-- FRENOVA -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name">FRENOVA</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage frenova-text">33.36%</div>
-                        <div class="candidate-total-votes">4,879,555 Votos</div>
-                    </div>
+        <!-- Unidad Popular -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Unidad Popular (UP)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage up-text">0.62%</div>
+                    <div class="candidate-total-votes">90,000 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-up" style="width: 0.62%;"></div>
+            </div>
+        </div>
 
-            <!-- Convergencia Social -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name">Convergencia Social (CS)</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage convergencia-text">10.87%</div>
-                        <div class="candidate-total-votes">1,589,796 Votos</div>
-                    </div>
+        <!-- Agrupación Liberal por Celania -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Agrupación Liberal por Celania (ALC)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage liberal-text">0.27%</div>
+                    <div class="candidate-total-votes">39,034 Votos</div>
                 </div>
             </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-liberal" style="width: 0.27%;"></div>
+            </div>
+        </div>
 
-            <!-- Celania Roja -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name">Celania Roja (CR)</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage roja-text">3.55%</div>
-                        <div class="candidate-total-votes">519,802 Votos</div>
-                    </div>
+        <!-- Frente Popular -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Frente Popular (FP)</div>
+                </div>
+                <div class="candidate-votes">
+                    <div class="candidate-percentage fp-text">0.27%</div>
+                    <div class="candidate-total-votes">39,034 Votos</div>
                 </div>
             </div>
-
-            <!-- Unidad Popular -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name">Unidad Popular (UP)</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="candidate-percentage up-text">0.62%</div>
-                        <div class="candidate-total-votes">90,000 Votos</div>
-                    </div>
-                </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill bg-fp" style="width: 0.27%;"></div>
             </div>
+        </div>
 
-            <!-- Agrupación Liberal por Celania -->
-            <div class="candidate-card">
-                <div class="candidate-info">
-                    <div>
-                        <div class="candidate-name">Agrupación Liberal por Celania (ALC)</div>
-                    </div>
-                    <div class="candidate-votes">
-                        <div class="
+        <!-- Partido Peronista -->
+        <div class="candidate-card">
+            <div class="candidate-info">
+                <div>
+                    <div class="candidate-name">Partido Peronista</div>
+                </div>
+                <div class="candidate-votes"></div>
+            </
