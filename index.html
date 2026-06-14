@@ -1,9 +1,9 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Cómputo - Elecciones Celania</title>
+    <title>Resultados Elecciones Celania</title>
     <style>
         :root {
             --bg-color: #f4f6f9;
@@ -152,12 +152,12 @@
             background-color: var(--accent);
         }
 
-        /* Línea Divisoria Institucional */
+        /* Línea Divisoria */
         .seccion-divider {
             border: 0;
             height: 3px;
             background-image: linear-gradient(to right, rgba(11, 31, 59, 0), rgba(11, 31, 59, 0.8), rgba(11, 31, 59, 0));
-            margin: 50px 0;
+            margin: 40px 0;
         }
 
         /* Sección de Resultados */
@@ -172,72 +172,7 @@
             letter-spacing: 0.5px;
         }
 
-        .candidate-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .candidate-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .party-name {
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #666;
-        }
-
-        .candidate-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #111;
-        }
-
-        .candidate-votes {
-            text-align: right;
-        }
-
-        .candidate-percentage {
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-
-        .adl-text { color: var(--color-adl); }
-        .frenova-text { color: #558b2f; font-weight: bold; }
-        .fcc-text { color: var(--color-fcc); }
-        .alianza-text { color: var(--color-alianza); }
-        .convergencia-text { color: var(--color-convergencia); }
-        .roja-text { color: var(--color-roja); }
-
-        .progress-bar-bg {
-            background-color: #eaeaea;
-            border-radius: 10px;
-            height: 14px;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            border-radius: 10px;
-        }
-
-        .bg-adl { background-color: var(--color-adl); }
-        .bg-frenova { background-color: var(--color-frenova); }
-        .bg-fcc { background-color: var(--color-fcc); }
-        .bg-alianza { background-color: var(--color-alianza); }
-        .bg-convergencia { background-color: var(--color-convergencia); }
-        .bg-roja { background-color: var(--color-roja); }
-        .bg-blanco { background-color: var(--color-blanco); }
-
-        /* Estilos de Gráficos de Pastel (SVG) */
+        /* Gráficos de Pastel (SVG) */
         .chart-container {
             display: flex;
             flex-wrap: wrap;
@@ -297,12 +232,12 @@
     <div class="container">
         
         <!-- ==================================================== -->
-        <!-- SECCIÓN 1: DATOS NACIONALES                          -->
+        <!-- PARTE SUPERIOR NORMAL (COMO ESTABA ANTES)            -->
         <!-- ==================================================== -->
-        <div class="results-title">1. Resumen de Escrutinio Territorial (Nacional)</div>
+        <div class="results-title">Resumen de Escrutinio Territorial</div>
         
         <div class="poblacion-card">
-            <div class="poblacion-title">Datos Demográficos Nacionales</div>
+            <div class="poblacion-title">Datos Demográficos</div>
             <div class="poblacion-grid">
                 <div class="poblacion-item">Población Total: <span>32,790,071</span></div>
                 <div class="poblacion-item">Hab. Registrados: <span>24,100,000</span></div>
@@ -344,46 +279,20 @@
 
 
         <!-- ==================================================== -->
-        <!-- NUEVA SECCIÓN: COMPARATIVA TERRITORIO TOTAL VS EXTERIOR -->
+        <!-- SECCIÓN DE ABAJO: INCLUSIÓN EXCLUSIVA DEL VOTO EXTRANJERO -->
         <!-- ==================================================== -->
         <hr class="seccion-divider">
-        <div class="results-title">2. Distribución General del Territorio Absoluto</div>
-        
-        <div class="poblacion-card" style="border-left-color: #0288d1; background-color: #f8fafc;">
-            <div class="poblacion-title" style="color: #0288d1;">Análisis de Padrón Electoral Global</div>
-            <p style="font-size: 0.88rem; color: #555; margin: 0 0 12px 0; text-align: justify;">
-                A continuación se contrasta la magnitud y el balance logístico establecido entre el electorado residente en las provincias nacionales frente a los núcleos ciudadanos habilitados en el exterior.
-            </p>
-            <div class="poblacion-grid">
-                <div class="poblacion-item">Padrón Nacional Interno: <span>24,100,000 (95.59%)</span></div>
-                <div class="poblacion-item">Padrón en el Exterior: <span>1,110,000 (4.41%)</span></div>
-                <div class="poblacion-item">Mesas Internas: <span>96,400 (95.60%)</span></div>
-                <div class="poblacion-item">Mesas en el Exterior: <span>4,440 (4.40%)</span></div>
-                <div class="poblacion-item"><strong>Padrón Electoral Total:</strong> <span><strong>25,210,000 hab.</strong></span></div>
-                <div class="poblacion-item"><strong>Infraestructura Total:</strong> <span><strong>100,840 mesas</strong></span></div>
-            </div>
-        </div>
+        <div class="results-title" style="color: #0288d1; border-left-color: #0288d1;">Información del Voto Extranjero</div>
 
-
-        <!-- ==================================================== -->
-        <!-- SECCIÓN 3: INTERFAZ DE VOTO EXTRANJERO Y GRÁFICOS    -->
-        <!-- ==================================================== -->
-        <hr class="seccion-divider">
-        <div class="results-title" style="color: #0288d1; border-left-color: #0288d1;">3. Interfaz del Voto Extranjero</div>
-
-        <!-- Bloque Especial de Texto con Datos Completos del Extranjero -->
-        <div class="poblacion-card" style="border-left: 4px solid #0288d1; background-color: #f4f9fd; padding: 22px; margin-bottom: 25px;">
-            <div style="font-size: 1.1rem; font-weight: bold; color: #0b1f3b; margin-bottom: 15px; border-bottom: 2px solid #0288d1; padding-bottom: 5px; text-transform: uppercase;">
-                SISTEMA DE CÓMPUTO ELECTORAL (REPORTE EMITIDO)
-            </div>
-            
+        <!-- Bloque con los puntos informativos solicitados -->
+        <div class="poblacion-card" style="border-left: 4px solid #0288d1; background-color: #f4f9fd; padding: 20px;">
             <div style="font-size: 0.88rem; line-height: 1.6; color: #333;">
                 <strong style="color: #0288d1;">📊 DATOS DE POBLACIÓN ELECTORAL (EXTRANJERO)</strong><br>
                 • Población Total en el Exterior: 3,500,000<br>
                 • Hab. Ext. Registrados (Padrón): 1,110,000<br>
                 • Mesas en el Extranjero: 4,440<br><br>
 
-                <strong style="color: #0288d1;">📈 AVANCE DEL ESCRUTINIO INTERNACIONAL (100% ABSOLUTO)</strong><br>
+                <strong style="color: #0288d1;">📈 AVANCE DEL ESCRUTINIO INTERNACIONAL</strong><br>
                 • Actas Procesadas en el Exterior: 100.00%<br>
                 • Votantes Actuales (Exterior): 2,192,245<br>
                 • Mesas Procesadas: 4,440<br>
@@ -392,79 +301,61 @@
                 • PARTICIPACIÓN CIUDADANA EN EL EXTERIOR: <strong>62.63%</strong><br><br>
 
                 <strong style="color: #0b1f3b;">🗳️ RESULTADOS PRESIDENCIALES EN EL EXTRANJERO</strong><br>
-                • <strong>FRENTE DE CONVERGENCIA CIVIL</strong> (Javiera Milei / Alvaro Uribe): <strong>57.14%</strong> | 1,252,711 Votos<br>
-                • <strong>FRENOVA</strong> (Carmen Polo / Sanae Yamamoto): <strong>31.43%</strong> | 688,991 Votos<br>
-                • <strong>ACCIÓN POR LA DEMOCRACIA Y LIBERTAD</strong> (Sebastián Piñera / Isabel Ayuso): <strong>11.43%</strong> | 250,543 Votos<br><br>
+                • Frente de Convergencia Civil (FCC): 57.14% (1,252,711 Votos)<br>
+                • FRENOVA: 31.43% (688,991 Votos)<br>
+                • Acción por la Democracia y Libertad (ADL): 11.43% (250,543 Votos)<br><br>
 
                 <strong style="color: #0b1f3b;">🏛️ RESULTADOS AL PARLAMENTO EN EL EXTRANJERO</strong><br>
-                • <strong>ALIANZA (Fusión ADL + FCC + PP):</strong> 63.16% | 1,384,692 Votos<br>
-                • <strong>FRENOVA:</strong> 23.68% | 519,259 Votos<br>
-                • <strong>Convergencia Social (CS):</strong> 13.16% | 288,294 Votos<br>
-                • <strong>Celania Roja (CR):</strong> 0.00% | 0 Votos<br>
-                • <strong>Otros / Minorías:</strong> 0.00% | 0 Votos
+                • Alianza (Fusión ADL + FCC + PP): 63.16% (1,384,692 Votos)<br>
+                • FRENOVA: 23.68% (519,259 Votos)<br>
+                • Convergencia Social (CS): 13.16% (288,294 Votos)<br>
+                • Celania Roja (CR): 0.00% (0 Votos)<br>
+                • Otros / Minorías: 0.00% (0 Votos)
             </div>
         </div>
 
-        <!-- GRÁFICOS DE PASTEL (CIRCULARES) EN MEDIO-CÍRCULO / REPARTICIÓN -->
-        <h3 style="color: #0b1f3b; font-size: 1.1rem; margin-top: 30px; text-transform: uppercase;">📊 Gráficos de Repartición (Voto Extranjero)</h3>
-        
-        <div class="chart-container">
+        <!-- Círculos de pastel divididos en mitades/porciones exactas según los datos -->
+        <div class="chart-container" style="margin-top: 20px;">
             
-            <!-- Pastel Presidencial Extranjero -->
+            <!-- Pastel Presidencial -->
             <div class="chart-box">
                 <h4>Presidencia (Exterior)</h4>
                 <svg class="pie-chart" width="160" height="160" viewBox="0 0 32 32">
-                    <!-- FCC: 57.14% -> stroke-dasharray="57.14 100" stroke-dashoffset="0" -->
+                    <!-- FCC: 57.14% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#0a2540" stroke-width="32" stroke-dasharray="57.14 100" stroke-dashoffset="0" />
-                    <!-- FRENOVA: 31.43% -> stroke-dasharray="31.43 100" stroke-dashoffset="-57.14" -->
+                    <!-- FRENOVA: 31.43% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#7fff00" stroke-width="32" stroke-dasharray="31.43 100" stroke-dashoffset="-57.14" />
-                    <!-- ADL: 11.43% -> stroke-dasharray="11.43 100" stroke-dashoffset="-88.57" -->
+                    <!-- ADL: 11.43% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#1a365d" stroke-width="32" stroke-dasharray="11.43 100" stroke-dashoffset="-88.57" />
                 </svg>
                 <div class="legend-box">
                     <div class="legend-item"><span class="legend-color" style="background: #0a2540;"></span><strong>FCC:</strong> 57.14%</div>
-                    <div class="legend-item"><span class="legend-color" style="background: #7fff00; border:1px solid #aaa;"></span><strong>FRENOVA:</strong> 31.43%</div>
+                    <div class="legend-item"><span class="legend-color" style="background: #7fff00; border: 1px solid #ccc;"></span><strong>FRENOVA:</strong> 31.43%</div>
                     <div class="legend-item"><span class="legend-color" style="background: #1a365d;"></span><strong>ADL:</strong> 11.43%</div>
                 </div>
             </div>
 
-            <!-- Pastel Parlamento Extranjero -->
+            <!-- Pastel Parlamento -->
             <div class="chart-box">
                 <h4>Parlamento (Exterior)</h4>
                 <svg class="pie-chart" width="160" height="160" viewBox="0 0 32 32">
-                    <!-- ALIANZA: 63.16% -> stroke-dasharray="63.16 100" stroke-dashoffset="0" -->
+                    <!-- ALIANZA: 63.16% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#455a64" stroke-width="32" stroke-dasharray="63.16 100" stroke-dashoffset="0" />
-                    <!-- FRENOVA: 23.68% -> stroke-dasharray="23.68 100" stroke-dashoffset="-63.16" -->
+                    <!-- FRENOVA: 23.68% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#7fff00" stroke-width="32" stroke-dasharray="23.68 100" stroke-dashoffset="-63.16" />
-                    <!-- CS: 13.16% -> stroke-dasharray="13.16 100" stroke-dashoffset="-86.84" -->
+                    <!-- CS: 13.16% -->
                     <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ba68c8" stroke-width="32" stroke-dasharray="13.16 100" stroke-dashoffset="-86.84" />
                 </svg>
                 <div class="legend-box">
                     <div class="legend-item"><span class="legend-color" style="background: #455a64;"></span><strong>ALIANZA:</strong> 63.16%</div>
-                    <div class="legend-item"><span class="legend-color" style="background: #7fff00; border:1px solid #aaa;"></span><strong>FRENOVA:</strong> 23.68%</div>
+                    <div class="legend-item"><span class="legend-color" style="background: #7fff00; border: 1px solid #ccc;"></span><strong>FRENOVA:</strong> 23.68%</div>
                     <div class="legend-item"><span class="legend-color" style="background: #ba68c8;"></span><strong>CS:</strong> 13.16%</div>
-                    <div class="legend-item" style="color:#aaa;"><span class="legend-color" style="background: #d32f2f;"></span><strong>CR / Otros:</strong> 0.00%</div>
                 </div>
             </div>
 
         </div>
 
-        <!-- Tarjeta de Participación Cuadrada (Visual Exterior) -->
-        <div class="participacion-card" style="border-left: 4px solid #0288d1;">
-            <div class="participacion-info">
-                <div style="color: #0288d1;">PORCENTAJE DE PARTICIPACIÓN EN EL EXTRANJERO</div>
-                <div style="color: #0288d1;">62.63%</div>
-            </div>
-            <div class="progress-bar-square-bg">
-                <div class="progress-bar-square-fill" style="width: 62.63%; background-color: #0288d1;"></div>
-            </div>
-        </div>
-
     </div>
-
-    <footer>
-        Oficina Nacional de Procesos Electorales de Celania &copy; 2026
-    </footer>
 
 </body>
     </html>
